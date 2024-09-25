@@ -14,8 +14,8 @@ The goal of this project is to ingest data from various departments with differe
 3. **Aggregation**: Silver Layer to Gold Layer (this stage meets Business' Requirements) using Spark Pool
 
 #### Data Explorotary
-- whenever sitting data into any layers create a seperate notebook for datadiscover
-- these notebooks must be reusable for data analysis purposes
+- whenever sitting data into any layers, we should create a seperate notebook for data discovery.
+- these notebooks must be reusable for data analysis purposes.
 
 #### Phase2- ELTL via Synapse Pipeline
 - Create 2 Pipelines for Bronze to Silver (Partitioned Files) and Single files
