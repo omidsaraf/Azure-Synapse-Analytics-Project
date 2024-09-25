@@ -1,5 +1,6 @@
 https://www.kaggle.com/datasets/elemento/nyc-yellow-taxi-trip-data
 
+in the following Picture we can find relation between Raw Files:
 
 ![image](https://github.com/user-attachments/assets/8e38cad3-d9e7-4db1-9b26-e7cdbeeb8176)
 
