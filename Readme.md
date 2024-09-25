@@ -17,6 +17,9 @@ The goal of this project is to ingest data from various departments with differe
 - whenever sitting data into any layers, we should create a seperate notebook for data discovery.
 - these notebooks must be reusable for data analysis purposes.
 
+![image](https://github.com/user-attachments/assets/d6c57b98-cdd8-4210-87e2-0d585e02ac2d)
+
+
 #### Phase2- ELTL via Synapse Pipeline
 - Create 2 Pipelines for Bronze to Silver (Partitioned Files) and Single files
 - Create 1 Pipeline for Silver to Gold
