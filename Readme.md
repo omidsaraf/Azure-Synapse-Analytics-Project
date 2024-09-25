@@ -13,11 +13,11 @@ The goal of this project is to ingest data from various departments with differe
 2. **Data Cleansing**: Bronze Layer to Silver Layer - Cleaning the data in the subsequent layer using serverless SQL Pool
 3. **Aggregation**: Silver Layer to Gold Layer (this stage meets Business' Requirements) using Spark Pool
 
-##### Data Explorotary
+#### Data Explorotary
 - whenever sitting data into any layers create a seperate notebook for datadiscover
 - these notebooks must be reusable for data analysis purposes
 
-##### Phase2- ELTL via Synapse Pipeline
+#### Phase2- ELTL via Synapse Pipeline
 - Create 2 Pipelines for Bronze to Silver (Partitioned Files) and Single files
 - Create 1 Pipeline for Silver to Gold
 - Create a Master Pipeline
@@ -32,7 +32,7 @@ The goal of this project is to ingest data from various departments with differe
 2. Modify Report via Power BI desktop
 
 
-## Requirements
+### Requirements
 
 1. **Azure Setup**:
     - Create a Subscription account, then create a Resource Group under it, and then create Resources under it.
