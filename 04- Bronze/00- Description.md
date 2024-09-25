@@ -1,4 +1,4 @@
-##in Bronze Layer:
+##for Bronze Layer:
 - Ingest Raw Data without any changes
 - Using Serverless SQL Pool
 - Create External Tables for Single files with CSV Format
