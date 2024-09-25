@@ -18,6 +18,8 @@ The goal of this project is to ingest data from various departments with differe
 - these notebooks must be reusable for data analysis purposes.
 
 ![image](https://github.com/user-attachments/assets/d6c57b98-cdd8-4210-87e2-0d585e02ac2d)
+![image](https://github.com/user-attachments/assets/a8b8c309-dbb8-457c-bbd0-e722f97f1f3a)
+
 
 
 #### Phase2- ELTL via Synapse Pipeline
