@@ -107,31 +107,6 @@ FROM
         service_zone VARCHAR(15) COLLATE Latin1_General_100_CI_AI_SC_UTF8
     )AS [result]
 
-CREATE DATABASE nyc_taxi_discovery;
-
-USE nyc_taxi_discovery;
-
-ALTER DATABASE nyc_taxi_discovery COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-SELECT
-    *
-FROM
-    OPENROWSET(
-        BULK 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/raw/taxi_zone.csv',
-        FORMAT = 'CSV',
-        PARSER_VERSION = '2.0',
-        HEADER_ROW = TRUE,
-        FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '\n'
-    ) 
-    WITH (
-        LocationID SMALLINT,
-        Borough VARCHAR(15),
-        Zone VARCHAR(50),
-        service_zone VARCHAR(15)
-    )AS [result]
-
-
 -- Select only subset of columns 
 SELECT
     *
@@ -185,39 +160,4 @@ FROM
         zone VARCHAR(50) 3,
         service_zone VARCHAR(15) 4
     )AS [result]
-
--- Create External Data Source
-CREATE EXTERNAL DATA SOURCE nyc_taxi_data
-WITH(
-    LOCATION = 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/'
-)
-
-CREATE EXTERNAL DATA SOURCE nyc_taxi_data_raw
-WITH(
-    LOCATION = 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/raw'
-)
-
-SELECT
-    *
-FROM
-    OPENROWSET(
-        BULK 'taxi_zone.csv',
-        DATA_SOURCE = 'nyc_taxi_data_raw',
-        FORMAT = 'CSV',
-        PARSER_VERSION = '2.0',
-        FIRSTROW = 2,
-        FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '\n'
-    ) 
-    WITH (
-        location_id SMALLINT 1,
-        borough VARCHAR(15) 2,
-        zone VARCHAR(50) 3,
-        service_zone VARCHAR(15) 4
-    )AS [result]
-
-
-DROP EXTERNAL DATA SOURCE nyc_taxi_data;
-
-SELECT name, location FROM sys.external_data_sources;
 
