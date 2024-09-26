@@ -1,4 +1,9 @@
 ````sql
+
+USE NYC_TAXI_DW;
+GO
+
+
 Method1
 --------------------------------------------
 CREATE DATABASE SCOPED CREDENTIAL AzureBlobCredential
@@ -8,9 +13,6 @@ SECRET = 'your-storage-account-key';
 
 Method1
 -----------------------
-USE NYC_TAXI_DW;
-GO
-
 -- Create a database scoped credential
 CREATE DATABASE SCOPED CREDENTIAL sqlondemand
 WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
