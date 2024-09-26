@@ -7,7 +7,9 @@
 ````sql
 USE NYC_TAXI_DW
 GO
-CREATE OR ALTER EXTERNAL FILE FORMAT CSV_file_format
+
+IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'CSV_file_format')
+CREATE EXTERNAL FILE FORMAT CSV_file_format
 WITH (
     FORMAT_TYPE = DELIMITEDTEXT,
     FORMAT_OPTIONS (
@@ -46,64 +48,18 @@ IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'tsv_file_fo
             Encoding = 'UTF8',
             PARSER_VERSION = '1.0'
         )  );
+------------------------------------------------------------------------
+-- Create external file format for parquet_file_format
+IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'parquet_file_format')
+    CREATE EXTERNAL FILE FORMAT parquet_file_format
+    WITH (
+        FORMAT_TYPE = PARQUET,
+        DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'
+    );
+------------------------------------------------------------------------
+IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'delta_file_format')
+    CREATE EXTERNAL FILE FORMAT delta_file_format
+    WITH (
+        FORMAT_TYPE = DELTA,
+        DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec');
 
--- Create calendar table  ---> CSV
-IF OBJECT_ID('bronze.calendar') IS NOT NULL
-    DROP EXTERNAL TABLE bronze.calendar;
-CREATE EXTERNAL TABLE bronze.calendar (
-    date_key INT,
-    date DATE,
-    year SMALLINT,
-    month TINYINT,
-    day TINYINT,
-    day_name VARCHAR(10),
-    day_of_year SMALLINT,
-    week_of_month TINYINT,
-    week_of_year TINYINT,
-    month_name VARCHAR(10),
-    year_month INT,
-    year_week INT
-)
-WITH (
-    LOCATION = 'raw/calendar.csv',
-    DATA_SOURCE = nyc_taxi_src,
-    FILE_FORMAT = csv_file_format2,
-    REJECT_VALUE = 10,
-    REJECTED_ROW_LOCATION = 'rejections/calendar'
-);
-SELECT * FROM bronze.calendar;
----------------------------------------------------------
--- Create vendor table    ---> CSV
-IF OBJECT_ID('bronze.vendor') IS NOT NULL
-    DROP EXTERNAL TABLE bronze.vendor;
-
-CREATE EXTERNAL TABLE bronze.vendor (
-    vendor_id TINYINT,
-    vendor_name VARCHAR(50)
-)
-WITH (
-    LOCATION = 'raw/vendor.csv',
-    DATA_SOURCE = nyc_taxi_src,
-    FILE_FORMAT = csv_file_format2,
-    REJECT_VALUE = 10,
-    REJECTED_ROW_LOCATION = 'rejections/vendor'
-);
-SELECT * FROM bronze.vendor;
----------------------------------------------------------------------------------
--- Create trip_type table   ---> TSV
-IF OBJECT_ID('bronze.trip_type') IS NOT NULL
-    DROP EXTERNAL TABLE bronze.trip_type;
-
-CREATE EXTERNAL TABLE bronze.trip_type (
-    trip_type TINYINT,
-    trip_type_desc VARCHAR(50)
-)
-WITH (
-    LOCATION = 'raw/trip_type.tsv',
-    DATA_SOURCE = nyc_taxi_src,
-    FILE_FORMAT = tsv_file_format2,
-    REJECT_VALUE = 10,
-    REJECTED_ROW_LOCATION = 'rejections/trip_type'
-);
-
-SELECT * FROM bronze.trip_type;
