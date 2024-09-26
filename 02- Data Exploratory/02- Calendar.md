@@ -1,3 +1,5 @@
+```sql
+
 USE nyc_taxi_discovery;
 
 SELECT *
