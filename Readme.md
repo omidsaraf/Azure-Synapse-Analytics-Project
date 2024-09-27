@@ -7,20 +7,6 @@
 
 ### Project Overview
 
-**Data Ingestion:**
-
-**Data Discovery:**
-
-
-**Data Ingestion:**
-
-
-**Data Transformation:**
-
-
-
-
-
 #### Phase1- Develop Medalion Architecture
 1. **Landing Data**: Initial stage where data is ingested into Bronze Layer.
    -  Ingest Raw Data into Bronze Layer (Storage's Container)
