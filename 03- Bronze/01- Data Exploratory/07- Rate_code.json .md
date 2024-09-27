@@ -22,9 +22,8 @@ SELECT rate_code_id, rate_code
 ![image](https://github.com/user-attachments/assets/67290121-fe19-42b5-a018-3e9c77df19d3)
 
 
-Extra:
-```
- -- Process multi line file
+Extra - Process multi line file
+````
   SELECT rate_code_id, rate_code
   FROM OPENROWSET(
       BULK 'rate_code_multi_line.json',
