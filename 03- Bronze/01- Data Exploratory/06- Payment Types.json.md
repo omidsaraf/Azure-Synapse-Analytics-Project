@@ -1,6 +1,4 @@
-````sql
-
-
+````
 SELECT CAST(JSON_VALUE(jsonDoc, '$.payment_type') AS SMALLINT) payment_type,
         CAST(JSON_VALUE(jsonDoc, '$.payment_type_desc') AS VARCHAR(15)) payment_type_desc
   FROM OPENROWSET(
@@ -57,12 +55,9 @@ SELECT payment_type, description
 
 
 
+Extra - Reading data from JSON with arrays
 
-
-Extra
-Reading data from JSON with arrays
-
-```
+````
 SELECT CAST(JSON_VALUE(jsonDoc, '$.payment_type') AS SMALLINT) payment_type,
         CAST(JSON_VALUE(jsonDoc, '$.payment_type_desc[0].value') AS VARCHAR(15)) payment_type_desc_0,
         CAST(JSON_VALUE(jsonDoc, '$.payment_type_desc[1].value') AS VARCHAR(15)) payment_type_desc_01
@@ -106,3 +101,4 @@ SELECT  payment_type, payment_type_desc_value
       sub_type SMALLINT,
       payment_type_desc_value VARCHAR(20) '$.value'
   );
+````
