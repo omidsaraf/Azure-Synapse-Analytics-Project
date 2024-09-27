@@ -1,7 +1,5 @@
 ```sql
 
-USE nyc_taxi_discovery;
-
 SELECT *
   FROM OPENROWSET(
       BULK 'calendar.csv',
