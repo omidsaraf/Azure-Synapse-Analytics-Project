@@ -24,3 +24,4 @@ WITH (
 );
 
 
+![image](https://github.com/user-attachments/assets/320b4f1a-1137-4a1f-a228-dc841a938078)
