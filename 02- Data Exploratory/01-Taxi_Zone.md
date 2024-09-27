@@ -1,28 +1,9 @@
 ````sql
 
-SELECT
-    TOP 100 *
-FROM
-    OPENROWSET(
-        BULK 'https://synapsecoursedl.dfs.core.windows.net/nyc-taxi-data/raw/taxi_zone.csv',
-        FORMAT = 'CSV',
-        PARSER_VERSION = '2.0'
-    ) AS [result]
+'https://synapsecoursedl.dfs.core.windows.net/nyc-taxi-data/raw/taxi_zone.csv'
 
 -- Changed to use the abfss protocol
 -- HEADER_ROW set to TRUE, Row and Field terminators set
-SELECT
-    TOP 100 *
-FROM
-    OPENROWSET(
-        BULK 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/raw/taxi_zone.csv',
-        FORMAT = 'CSV',
-        PARSER_VERSION = '2.0',
-        HEADER_ROW = TRUE,
-        FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '\n'
-    ) AS [result]
-
 -- Examine the data types for the columns
 EXEC sp_describe_first_result_set N'SELECT
     TOP 100 *
