@@ -92,7 +92,8 @@ FROM
     )AS [result]'
 ````
 
-![image](https://github.com/user-attachments/assets/96ab2301-82f1-4add-8985-7f4c7b693ee9)
+![image](https://github.com/user-attachments/assets/7edda83a-4fcd-4d38-91ad-d1fa70cd8fcf)
+
 
 ## Select only subset of columns 
 ````
