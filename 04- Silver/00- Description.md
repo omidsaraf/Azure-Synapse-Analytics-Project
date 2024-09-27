@@ -1,5 +1,6 @@
 ## Silver Layer
 
 - Using Serverless SQL Server
-- using CETAS Method to Transfer data as well as create external Table
-- 
+- Using CETAS Method to Transfer data as well as create external Table
+- Change File Format to Parquet
+- Transform data from Raw to Structured
