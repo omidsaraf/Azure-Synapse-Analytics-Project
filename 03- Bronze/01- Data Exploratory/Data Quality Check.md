@@ -10,6 +10,15 @@
 ![image](https://github.com/user-attachments/assets/e66c8cf4-7d9c-4a57-ade7-e60dc96a4f99)
 ![image](https://github.com/user-attachments/assets/f2695c07-49de-44a9-8fa6-8747546f210c)
 
+Find Negative Values
+![image](https://github.com/user-attachments/assets/5d32c1da-ba2f-4168-9386-3ae24f6bf7a9)
+![image](https://github.com/user-attachments/assets/5309c559-a8f7-4a2a-a05a-3aee275f5a96)
+
+Find Null Values
+![image](https://github.com/user-attachments/assets/abcafd8c-c04d-4ce8-8787-726086b58c5a)
+
+
+
 ## Check for duplicates in the Taxi Zone data
 
 ````sql
