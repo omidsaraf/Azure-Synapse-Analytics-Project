@@ -1,5 +1,5 @@
 
-## Phase 1 - Discovery
+## Discovery
 
 - **Review existing files**: 
   - Check file format, data type, and whether they are partitioned or not.
