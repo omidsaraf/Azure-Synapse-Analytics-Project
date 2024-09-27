@@ -23,4 +23,5 @@ SELECT *
       FIELDQUOTE = '"'
   ) AS vendor;
 
-
+````
+![image](https://github.com/user-attachments/assets/25685a77-55c6-4037-81a2-a5eec1f51706)
