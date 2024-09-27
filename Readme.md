@@ -12,15 +12,17 @@
    -  Ingest Raw Data into Bronze Layer (Storage's Container)
    -  Define the most efficient Queries to read data from Storage using OpenROWSet
    -  Create External Tables and Views for Underlying Data stored in Data Lake
-3. **Data Cleansing**: Bronze Layer to Silver Layer - Cleaning the data in the subsequent layer using serverless SQL Pool
+3. **Data Cleansing**: Bronze Layer to Silver Layer - Cleaning the data in the subsequent layer
+    - Using serverless SQL Pool
     - UsingParquet Format to store data in a columnar format to perform better with analytical queries.
     - Stored as Table/views
     - Ability to use T-SQL
     - Using Pay Per Query (do not use Dedicated Resource)
-4. **Aggregation**: Silver Layer to Gold Layer (this stage meets Business' Requirements) using Spark Pool
-     - Join Key Information required for reporting into New Tables: For example, combine trip and taxi zone data to produce BI reports from this table.
-     - Join Key Information required for Analytics into New Tables
-     - Must be able to use T-SQL for Transformed Data
+5. **Aggregation**: Silver Layer to Gold Layer (this stage meets Business' Requirements)
+     - Using Spark Pool
+     - Creating Notebook for Transform Silver to Gold Layer
+     - Join Key Information required for Analytics & reporting into New Table.
+     - Must be able to use PySpark for Transformed Data
      - Stored in Parquet Format
 #### Data Explorotary
 - Data Exploration Capability
@@ -32,8 +34,6 @@
 
 ![image](https://github.com/user-attachments/assets/d6c57b98-cdd8-4210-87e2-0d585e02ac2d)
 ![image](https://github.com/user-attachments/assets/a8b8c309-dbb8-457c-bbd0-e722f97f1f3a)
-
-
 
 #### Phase2- ELTL via Synapse Pipeline
 - Create 2 Pipelines for Bronze to Silver (Partitioned Files) and Single files
