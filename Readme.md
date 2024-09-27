@@ -48,10 +48,9 @@
 #### Phase4- Reporting
 - Using PowerBI Service within Synpase
 - Modify Report via Power BI desktop
--
- - Taxi Demand: We want to generate a report to identify taxi demand on different days of the week and in various locations of the city, etc.
- - Credit Card Campaign: Assist a campaign to encourage credit card payments instead of cash payments.
- - Operational Reporting: Create reports on data from IoT devices related to taxis.
+- Taxi Demand: We want to generate a report to identify taxi demand on different days of the week and in various locations of the city, etc.
+- Credit Card Campaign: Assist a campaign to encourage credit card payments instead of cash payments.
+- Operational Reporting: Create reports on data from IoT devices related to taxis.
 
 **Scheduling Requirement:**
 - Run at Regular Intervals
@@ -86,11 +85,6 @@
    -Desktop
    -Service
    -Using same account as Azure Portal account
-
-
-
-
-
    
 4. **Cost Conrol**:
    - It is recommended to defined Threshhould for Considered Budget.
@@ -98,7 +92,7 @@
    - it must be done withing Azure Cost Analysis
    - using Optimised Queries to Read and Write data
   
-  Note: by end of the project Stop all SQL and Saprk Pools.
+  Note: by end of the project please stop all SQL and Spark Pools.
 
 
 
