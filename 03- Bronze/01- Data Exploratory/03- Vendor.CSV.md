@@ -1,6 +1,5 @@
 ````sql
---- 
-Method1- Escape Comma
+--- Method1- Escape Comma
 SELECT *
   FROM OPENROWSET(
       BULK 'vendor_escaped.csv',
@@ -11,7 +10,7 @@ SELECT *
       ESCAPECHAR = '\\'
   ) AS vendor;
 
-Method2- Delimitator (Quote)
+--- Method2- Delimitator (Quote)
 
 SELECT *
   FROM OPENROWSET(
