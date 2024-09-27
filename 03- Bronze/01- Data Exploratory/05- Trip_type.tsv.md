@@ -8,3 +8,5 @@ SELECT *
       HEADER_ROW = TRUE,
       FIELDTERMINATOR = '\t'
   ) AS trip_type;
+````
+![image](https://github.com/user-attachments/assets/1037cb4c-f7e8-4189-bacd-98c1659c1375)
