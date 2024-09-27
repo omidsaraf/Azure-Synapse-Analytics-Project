@@ -1,4 +1,4 @@
-
+````sql
 SELECT *
   FROM OPENROWSET(
       BULK 'vendor_unquoted.csv',
