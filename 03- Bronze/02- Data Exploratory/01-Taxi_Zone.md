@@ -1,4 +1,4 @@
-##Read File
+## Read File
 ````
 SELECT
     TOP 100 *
@@ -13,7 +13,7 @@ FROM
 
 ![image](https://github.com/user-attachments/assets/7b0c6a3b-3374-48d2-8303-5f6b7886e886)
 
-##Examine data types for the columns
+## Examine data types for the columns
 ````
 EXEC sp_describe_first_result_set N'SELECT
     TOP 100 *
@@ -27,7 +27,7 @@ FROM
 ````
 ![image](https://github.com/user-attachments/assets/4296afcd-5230-402f-b8ba-dffdf4720a5b)
 
-##Check Maximum size of each column
+## Check Maximum size of each column
 ````
 SELECT
     MAX(LEN(LocationId)) AS len_LocationId,
@@ -47,7 +47,7 @@ FROM
 ![image](https://github.com/user-attachments/assets/3b9150c2-4203-4067-8e31-81a8e0535bd1)
 
 
-##Mention Column names with the most efficient data type and size
+## Mention Column names with the most efficient data type and size
 ````
 -- Use WITH clause to provide explicit data types
 SELECT
@@ -71,7 +71,7 @@ FROM
 ![image](https://github.com/user-attachments/assets/91842017-1096-4ea7-bc1b-9b4ed17ae9fc)
 
 
-##Check Maximum Size again (doule check)
+## Check Maximum Size again (doule check)
 ````
 EXEC sp_describe_first_result_set N'SELECT
     *
@@ -94,7 +94,7 @@ FROM
 
 ![image](https://github.com/user-attachments/assets/96ab2301-82f1-4add-8985-7f4c7b693ee9)
 
-##Select only subset of columns 
+## Select only subset of columns 
 ````
 SELECT
     *
@@ -114,7 +114,7 @@ FROM
 ````
 
 
-##Read data from a file without header
+## Read data from a file without header
 ![image](https://github.com/user-attachments/assets/c0a050ec-038b-44b3-b0f7-42cca4e732f4)
 ![image](https://github.com/user-attachments/assets/f40e2cc2-bef5-43d1-90ce-11e0e130ce90)
 
