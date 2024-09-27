@@ -15,7 +15,8 @@ FROM
         HEADER_ROW = TRUE
     ) AS [result]'
 ````
-![image](https://github.com/user-attachments/assets/dc275ff0-a824-4245-a55e-89383e65cf78)
+![image](https://github.com/user-attachments/assets/4296afcd-5230-402f-b8ba-dffdf4720a5b)
+
 
 ````
 SELECT
