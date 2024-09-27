@@ -1,4 +1,4 @@
-
+``
     - One of the main things that we need to consider is to find those tables mostly keeping Transactional and huge number of records. in our case, Trip Data has been stored by year and month so it is mostly required to be considered.
     - Path File: Year/Month/Trip Data.CSV
     - Total Amount of Records
