@@ -1,9 +1,8 @@
+
+![image](https://github.com/user-attachments/assets/f9866610-cb37-42c2-bbb5-611d3949af5f)
+
 ````sql
 
-'https://synapsecoursedl.dfs.core.windows.net/nyc-taxi-data/raw/taxi_zone.csv'
-
--- Changed to use the abfss protocol
--- HEADER_ROW set to TRUE, Row and Field terminators set
 
 -- Examine data types for the columns
 EXEC sp_describe_first_result_set N'SELECT
@@ -15,10 +14,7 @@ FROM
         PARSER_VERSION = ''2.0'',
         HEADER_ROW = TRUE
     ) AS [result]'
-
-
-
-
+![image](https://github.com/user-attachments/assets/dc275ff0-a824-4245-a55e-89383e65cf78)
 
 
 SELECT
@@ -35,6 +31,10 @@ FROM
         FIELDTERMINATOR = ',',
         ROWTERMINATOR = '\n'
     ) AS [result]
+
+![image](https://github.com/user-attachments/assets/851f2253-3c18-470f-8a53-08866e93301e)
+
+
 
 -- Use WITH clause to provide explicit data types
 SELECT
@@ -55,6 +55,8 @@ FROM
         service_zone VARCHAR(15)
     )AS [result]
 
+![image](https://github.com/user-attachments/assets/91842017-1096-4ea7-bc1b-9b4ed17ae9fc)
+
 EXEC sp_describe_first_result_set N'SELECT
     *
 FROM
@@ -73,7 +75,15 @@ FROM
         service_zone VARCHAR(15)
     )AS [result]'
 
+
+![image](https://github.com/user-attachments/assets/96ab2301-82f1-4add-8985-7f4c7b693ee9)
+
+
 SELECT name, collation_name FROM sys.databases;
+
+![image](https://github.com/user-attachments/assets/18c5ceb4-fa3f-47ae-a0c2-f157fe2e5ace)
+
+
 
 -- Specify UTF-8 Collation for VARCHAR columns
 SELECT
