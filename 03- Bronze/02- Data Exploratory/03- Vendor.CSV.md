@@ -1,14 +1,6 @@
 ````sql
-SELECT *
-  FROM OPENROWSET(
-      BULK 'vendor_unquoted.csv',
-      DATA_SOURCE = 'nyc_taxi_data_raw',
-      FORMAT = 'CSV',
-      PARSER_VERSION = '2.0',
-      HEADER_ROW = TRUE
-  ) AS vendor;
-
-
+--- 
+Method1- Escape Comma
 SELECT *
   FROM OPENROWSET(
       BULK 'vendor_escaped.csv',
@@ -18,6 +10,8 @@ SELECT *
       HEADER_ROW = TRUE,
       ESCAPECHAR = '\\'
   ) AS vendor;
+
+Method2- Delimitator (Quote)
 
 SELECT *
   FROM OPENROWSET(
