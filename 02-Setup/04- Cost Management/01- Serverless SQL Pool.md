@@ -21,11 +21,6 @@
 
 Understanding these factors is crucial for managing and estimating costs effectively. By monitoring the amount of data processed, read, and written, you can optimize your queries and control expenses. Azure Synapse Analytics also provides cost management features to help set budgets and monitor spending.
 
-
-
-![image](https://github.com/user-attachments/assets/5d73d30f-a150-4adb-add4-d1d7c19e932c)
-
-
 Method1- SQL pools settings
 ![image](https://github.com/user-attachments/assets/d5ecd32a-ea0b-4260-a618-ede06aa3c755)
 
