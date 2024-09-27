@@ -11,7 +11,7 @@ EXEC sp_describe_first_result_set N'SELECT
     TOP 100 *
 FROM
     OPENROWSET(
-        BULK ''abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/raw/taxi_zone.csv'',
+        BULK ''<Path File>'',
         FORMAT = ''CSV'',
         PARSER_VERSION = ''2.0'',
         HEADER_ROW = TRUE
