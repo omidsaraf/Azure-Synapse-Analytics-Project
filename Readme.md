@@ -53,7 +53,8 @@
 - Credit Card Campaign: Assist a campaign to encourage credit card payments instead of cash payments.
 - Operational Reporting: Create reports on data from IoT devices related to taxis.
 
-![image](https://github.com/user-attachments/assets/51d3917c-65c0-4bdb-bfb2-c68b71dadc61)
+![image](https://github.com/user-attachments/assets/f762144e-1433-42be-99f6-a29be23fbb95)
+
 
 
 **Scheduling Requirement:**
