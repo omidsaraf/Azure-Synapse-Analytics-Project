@@ -1,5 +1,5 @@
 
-#Set the folder paths so that it can be used later. 
+## Set the folder paths so that it can be used later. 
 ````python
 bronze_folder_path = 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/raw'
 silver_folder_path = 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/silver'
@@ -7,7 +7,7 @@ gold_folder_path = 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/g
 `````
 
 
-#Set the spark config to be able to get the partitioned columns year and month as strings rather than integers
+## Set the spark config to be able to get the partitioned columns year and month as strings rather than integers
 ````python
 spark.conf.set("spark.sql.sources.partitionColumnTypeInference.enabled", "false")
 ````
@@ -19,7 +19,7 @@ CREATE DATABASE IF NOT EXISTS nyc_taxi_ldw_spark
 LOCATION 'abfss://nyc-taxi-data@synapsecoursedl.dfs.core.windows.net/gold';
 ````
 
-# Read the silver data to be processed. 
+## Read the silver data to be processed. 
 ````python
 trip_data_green_df = spark.read.parquet(f"{silver_folder_path}/trip_data_green") 
 
@@ -38,7 +38,7 @@ trip_data_green_agg_df = trip_data_green_df \
 
 
 
-![image](https://github.com/user-attachments/assets/895228d1-db28-487a-bbca-f0077a6df7bf)
+
 
 ````
 
