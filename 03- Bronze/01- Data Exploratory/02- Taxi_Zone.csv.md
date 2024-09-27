@@ -1,5 +1,5 @@
 ## Read File
-````
+````sql
 SELECT
     TOP 100 *
 FROM
@@ -14,7 +14,7 @@ FROM
 ![image](https://github.com/user-attachments/assets/7b0c6a3b-3374-48d2-8303-5f6b7886e886)
 
 ## Examine data types for the columns
-````
+````sql
 EXEC sp_describe_first_result_set N'SELECT
     TOP 100 *
 FROM
@@ -28,7 +28,7 @@ FROM
 ![image](https://github.com/user-attachments/assets/4296afcd-5230-402f-b8ba-dffdf4720a5b)
 
 ## Check Maximum size of each column
-````
+````sql
 SELECT
     MAX(LEN(LocationId)) AS len_LocationId,
     MAX(LEN(Borough)) AS len_Borough,
@@ -48,7 +48,7 @@ FROM
 
 
 ## Mention Column names with the most efficient data type and size
-````
+````sql
 -- Use WITH clause to provide explicit data types
 SELECT
     *
@@ -72,7 +72,7 @@ FROM
 
 
 ## Check Maximum Size again (doule check)
-````
+````sql
 EXEC sp_describe_first_result_set N'SELECT
     *
 FROM
@@ -96,7 +96,7 @@ FROM
 
 
 ## Select only subset of columns 
-````
+````sql
 SELECT
     *
 FROM
@@ -120,7 +120,7 @@ FROM
 ![image](https://github.com/user-attachments/assets/f40e2cc2-bef5-43d1-90ce-11e0e130ce90)
 
 ### Fix Column Names
-````
+````sql
 SELECT
     *
 FROM
