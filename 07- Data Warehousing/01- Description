@@ -1,1 +1,4 @@
-11
+- Staging: Create External Table which used underlying storage for Gold Layer.
+- Synapse DW: Create Datawarehouse via CETAS method and store data in a Dedicated SQL Pool Table.
+- using Dedicated SQL Pool
+
