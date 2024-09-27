@@ -45,6 +45,7 @@
 - **Staging**: Create External Table which used underlying storage for Gold Layer.
 - **Synapse DW**: Create Datawarehouse via CETAS method and store data in a Dedicated SQL Pool Table.
 - using Dedicated SQL Pool
+![image](https://github.com/user-attachments/assets/bd491f75-d1bb-410e-800e-900907aa020e)
 
 #### Phase4- Reporting
 - Using PowerBI Service within Synpase
