@@ -39,6 +39,7 @@
 - Create 2 Pipelines for Bronze to Silver (Partitioned Files) and Single files
 - Create 1 Pipeline for Silver to Gold
 - Create a Master Pipeline
+![image](https://github.com/user-attachments/assets/7dfd19d4-7042-4274-a86a-56592d5e5fc9)
 
 #### Phase3- Data Warehousing
 - **Staging**: Create External Table which used underlying storage for Gold Layer.
