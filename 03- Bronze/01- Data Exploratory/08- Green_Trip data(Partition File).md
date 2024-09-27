@@ -16,4 +16,4 @@ FROM
 GROUP BY result.filename(), result.filepath(1), result.filepath(2)
 ORDER BY result.filename(), result.filepath(1), result.filepath(2);
 ````
-![image](https://github.com/user-attachments/assets/54ee0e1d-2515-4f48-b636-ebde2b4ea47b)
+![image](https://github.com/user-attachments/assets/b290aaee-8299-43e3-bd1f-54e8655a43a7)
