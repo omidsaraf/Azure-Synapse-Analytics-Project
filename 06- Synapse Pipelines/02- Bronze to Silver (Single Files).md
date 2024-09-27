@@ -1,9 +1,9 @@
 
-# Using JSON File with Fother Path , SP (Array Type):
+### 01- Using JSON File with Fother Path , SP (Array Type):
 ![image](https://github.com/user-attachments/assets/a4de353a-ab5b-45a0-89b6-9d0eb260c80d)
 
 
-# Create SP for each Create External Table (Bronze Layer) all in one SQL notebook
+### 02- Create SP for each Create External Table (Bronze Layer) all in one SQL notebook
 
 ````sql
 -----------------------------
@@ -123,7 +123,14 @@ AS SELECT *
 FROM BRONZE.VW_Payment_Type;
 END;
 ````
+### 03- Create Variable for Pipeline
+![image](https://github.com/user-attachments/assets/18ddf0a3-d320-4080-a09b-97a250341ca8)
 
 
+### 03- Deploy Foreach Component 
+![image](https://github.com/user-attachments/assets/54772ad9-412d-4e36-bd09-e99cdecd38b8)
 
-![image](https://github.com/user-attachments/assets/18823c17-8d23-4935-bfb3-be2ee5c87a8c)
+### 04- Components Inside Forach Container
+![image](https://github.com/user-attachments/assets/831ceb21-2cf6-4e8e-8874-7b0b6b97d5a6)
+
+
