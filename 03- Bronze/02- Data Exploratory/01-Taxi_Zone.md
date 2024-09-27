@@ -4,7 +4,8 @@
 
 -- Changed to use the abfss protocol
 -- HEADER_ROW set to TRUE, Row and Field terminators set
--- Examine the data types for the columns
+
+-- Examine data types for the columns
 EXEC sp_describe_first_result_set N'SELECT
     TOP 100 *
 FROM
@@ -14,6 +15,11 @@ FROM
         PARSER_VERSION = ''2.0'',
         HEADER_ROW = TRUE
     ) AS [result]'
+
+
+
+
+
 
 SELECT
     MAX(LEN(LocationId)) AS len_LocationId,
