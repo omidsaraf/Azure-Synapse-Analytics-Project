@@ -1,38 +1,4 @@
 ````sql
-SELECT CAST(JSON_VALUE(jsonDoc, '$.payment_type') AS SMALLINT) payment_type,
-        CAST(JSON_VALUE(jsonDoc, '$.payment_type_desc') AS VARCHAR(15)) payment_type_desc
-  FROM OPENROWSET(
-      BULK 'payment_type.json',
-      DATA_SOURCE = 'nyc_taxi_data_raw',
-      FORMAT = 'CSV',
-      PARSER_VERSION = '1.0', 
-      FIELDTERMINATOR = '0x0b',
-      FIELDQUOTE = '0x0b',
-      ROWTERMINATOR = '0x0a'
-  )
-  WITH
-  (
-      jsonDoc NVARCHAR(MAX)
-  ) AS payment_type;
-
-EXEC sp_describe_first_result_set N'
- SELECT CAST(JSON_VALUE(jsonDoc, ''$.payment_type'') AS SMALLINT) payment_type,
-        CAST(JSON_VALUE(jsonDoc, ''$.payment_type_desc'') AS VARCHAR(15)) payment_type_desc
-  FROM OPENROWSET(
-      BULK ''payment_type.json'',
-      DATA_SOURCE = ''nyc_taxi_data_raw'',
-      FORMAT = ''CSV'',
-      PARSER_VERSION = ''1.0'', 
-      FIELDTERMINATOR = ''0x0b'',
-      FIELDQUOTE = ''0x0b'',
-      ROWTERMINATOR = ''0x0a''
-  )
-  WITH
-  (
-      jsonDoc NVARCHAR(MAX)
-  ) AS payment_type';  
-  
-
 SELECT payment_type, description
   FROM OPENROWSET(
       BULK 'payment_type.json',
