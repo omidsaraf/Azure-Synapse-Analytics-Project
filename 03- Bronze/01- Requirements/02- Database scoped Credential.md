@@ -9,7 +9,7 @@
     - **SECRET**: This is the storage account key.
     - **Use Case**: This method is typically used when you want to authenticate using the storage account's access key. It's a straightforward way to grant access to the storage account.
 
-2. **Method 2: Using Shared Access Signature (SAS)**
+2. **Method 2: Using Shared Access Signature (SAS Token)**
     ```sql
     CREATE DATABASE SCOPED CREDENTIAL sqlondemand
     WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
