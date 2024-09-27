@@ -127,10 +127,10 @@ END;
 ![image](https://github.com/user-attachments/assets/18ddf0a3-d320-4080-a09b-97a250341ca8)
 
 
-### 03- Deploy Foreach Component 
+### 04- Deploy Foreach Component 
 ![image](https://github.com/user-attachments/assets/54772ad9-412d-4e36-bd09-e99cdecd38b8)
 
-### 04- Components Inside Forach Container
+### 05- Components Inside Forach Container
 ![image](https://github.com/user-attachments/assets/831ceb21-2cf6-4e8e-8874-7b0b6b97d5a6)
 
 
