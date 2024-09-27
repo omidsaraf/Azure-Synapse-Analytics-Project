@@ -1,4 +1,4 @@
-````
+````sql
 SELECT
     result.filepath(1) AS year,
     result.filepath(2) AS month,
