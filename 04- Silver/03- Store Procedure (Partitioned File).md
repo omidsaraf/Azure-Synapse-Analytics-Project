@@ -80,13 +80,12 @@ BEGIN
     END
 
 END;
-
+)
 ````
 
 ## Static Soution:
 ````sql
 
-)
 EXEC SILVER.USP_TAXI_DATA_CSV '2020', '01';
 EXEC SILVER.USP_TAXI_DATA_CSV '2020', '02';
 EXEC SILVER.USP_TAXI_DATA_CSV '2020', '03';
