@@ -1,2 +1,18 @@
+````sql
 
-![image](https://github.com/user-attachments/assets/e8a1acbf-3632-41d6-96a1-7f9934a4ab47)
+SELECT
+    MAX(LEN(Column1)) AS len_Column1,
+    MAX(LEN(Column2)) AS len_Column1,
+    MAX(LEN(Column3)) AS len_Column1,
+    .
+    .
+    .
+FROM
+    OPENROWSET(
+        BULK '<Path File>',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',
+        HEADER_ROW = TRUE,
+        FIELDTERMINATOR = ',',
+        ROWTERMINATOR = '\n'
+    ) AS [result]
