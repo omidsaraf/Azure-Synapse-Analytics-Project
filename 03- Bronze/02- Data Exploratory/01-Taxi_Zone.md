@@ -82,13 +82,6 @@ FROM
 ![image](https://github.com/user-attachments/assets/96ab2301-82f1-4add-8985-7f4c7b693ee9)
 
 ````
-SELECT name, collation_name FROM sys.databases;
-````
-![image](https://github.com/user-attachments/assets/18c5ceb4-fa3f-47ae-a0c2-f157fe2e5ace)
-
-
-
-````
 -- Select only subset of columns 
 SELECT
     *
