@@ -18,8 +18,6 @@ One of the main things to consider is identifying tables that primarily store tr
 
 - **Path File**: `Year/Month/Trip Data.CSV`
 - **Total Amount of Records**: Ensure the number of records matches expectations. If not, approach the data supplier or use a different data source.
-
-### Data Quality Checks
 - **Min, Max, and Avg**: Check these metrics for the entire dataset using the address ending with `**`.
 - **Null Values**: Ensure the number of records based on the primary key and the `Total_Amount` column are the same; otherwise, there are null values.
 
@@ -104,9 +102,11 @@ SELECT
     payment_type, COUNT(1) AS number_of_records
 FROM
     OPENROWSET(
-        BULK 'trip_data_green_parquet/year=2020/month=01/',
-        FORMAT = 'PARQUET',
-        DATA_SOURCE = 'nyc_taxi_data_raw'
+  BULK 'trip_data_green_csv/year=*/month=*/*.csv',
+        DATA_SOURCE = 'nyc_taxi_data_raw',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',
+        HEADER_ROW = TRUE
     ) AS [result]
 GROUP BY payment_type
 ORDER BY payment_type;
