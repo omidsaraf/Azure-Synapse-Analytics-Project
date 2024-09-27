@@ -6,14 +6,41 @@
 
 
 ### Project Overview
-The goal of this project is to ingest data from various departments with different file formats. The process involves:
+
+**Data Ingestion:**
+
+**Data Discovery:**
+
+
+**Data Ingestion:**
+
+
+**Data Transformation:**
+
+
+
+
 
 #### Phase1- Develop Medalion Architecture
 1. **Landing Data**: Initial stage where data is ingested into Bronze Layer.
-2. **Data Cleansing**: Bronze Layer to Silver Layer - Cleaning the data in the subsequent layer using serverless SQL Pool
-3. **Aggregation**: Silver Layer to Gold Layer (this stage meets Business' Requirements) using Spark Pool
-
+   -  Ingest Raw Data into Bronze Layer (Storage's Container)
+   -  Define the most efficient Queries to read data from Storage using OpenROWSet
+   -  Create External Tables and Views for Underlying Data stored in Data Lake
+3. **Data Cleansing**: Bronze Layer to Silver Layer - Cleaning the data in the subsequent layer using serverless SQL Pool
+    - UsingParquet Format to store data in a columnar format to perform better with analytical queries.
+    - Stored as Table/views
+    - Ability to use T-SQL
+    - Using Pay Per Query (do not use Dedicated Resource)
+4. **Aggregation**: Silver Layer to Gold Layer (this stage meets Business' Requirements) using Spark Pool
+     - Join Key Information required for reporting into New Tables: For example, combine trip and taxi zone data to produce BI reports from this table.
+     - Join Key Information required for Analytics into New Tables
+     - Must be able to use T-SQL for Transformed Data
+     - Stored in Parquet Format
 #### Data Explorotary
+- Data Exploration Capability
+- Schema Applied to Raw Data
+- Discovery Using T-SQL
+- Discovery Using Serverless SQL Pool
 - whenever sitting data into any layers, we should create a seperate notebook for data discovery.
 - these notebooks must be reusable for data analysis purposes.
 
@@ -28,13 +55,24 @@ The goal of this project is to ingest data from various departments with differe
 - Create a Master Pipeline
 
 #### Phase3- Data Warehousing
-1. **Staging**: Create External Table which used underlying storage for Gold Layer.
-2. **Synapse DW**: Create Datawarehouse via CETAS method and store data in a Dedicated SQL Pool Table.
-3. using Dedicated SQL Pool
+- **Staging**: Create External Table which used underlying storage for Gold Layer.
+- **Synapse DW**: Create Datawarehouse via CETAS method and store data in a Dedicated SQL Pool Table.
+- using Dedicated SQL Pool
 
 #### Phase4- Reporting
-1. Using PowerBI Service within Synpase
-2. Modify Report via Power BI desktop
+- Using PowerBI Service within Synpase
+- Modify Report via Power BI desktop
+-
+ - Taxi Demand: We want to generate a report to identify taxi demand on different days of the week and in various locations of the city, etc.
+ - Credit Card Campaign: Assist a campaign to encourage credit card payments instead of cash payments.
+ - Operational Reporting: Create reports on data from IoT devices related to taxis.
+
+**Scheduling Requirement:**
+- Run at Regular Intervals
+- Ability to Monitor
+- Ability to re-Run Failed Pipelines
+- Ability to set up alerts on Failures
+
 
 
 ### Requirements
@@ -58,31 +96,24 @@ The goal of this project is to ingest data from various departments with differe
      - Deploy Spark Pool for Aggregate and moving data from Silver to Gold Layer with Pyspark notebook via Synapse pipeline.
      - Serverless SQL Pool must be running untill end of the project
      - Dedicated SQL Pool And SPark Pool must be running during Datawarehousing and Processing.
-1. **Power BI**:
+4. **Power BI**:
    -Desktop
    -Service
    -Using same account as Azure Portal account
+
+
+
+
+
+   
 4. **Cost Conrol**:
    - It is recommended to defined Threshhould for Considered Budget.
    - Activate Sending Email for Cost Alert
    - it must be done withing Azure Cost Analysis
+   - using Optimised Queries to Read and Write data
   
   Note: by end of the project Stop all SQL and Saprk Pools.
 
-
-
-
-
-
-This ETL project utilizes the Northwind Dataset as the data source. The project involves several key steps to ensure data is efficiently extracted, transformed, and loaded into a Data Warehouse.
-
-### 1. Creating the Data Warehouse in SSMS
-- **Setup**: Establish the Data Warehouse environment in SSMS, ensuring it is optimized for performance and scalability.
-
-### 2. Creating Dimension and Fact Tables
-- **T-SQL Scripts**: Use T-SQL scripts in SSMS to define the structure of Dimension and Fact tables, ensuring they are designed to support efficient querying and reporting.
-
-### 3. Creating the Staging Database in SSMS
 
 
 
