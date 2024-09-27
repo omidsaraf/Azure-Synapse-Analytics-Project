@@ -71,16 +71,6 @@ HAVING COUNT(1) > 1;
 ```
 
 #### Identify Data Quality Issues in Trip Total Amount
-```sql
-SELECT
-    TOP 100 *
-FROM
-    OPENROWSET(
-        BULK 'trip_data_green_parquet/year=2020/month=01/',
-        FORMAT = 'PARQUET',
-        DATA_SOURCE = 'nyc_taxi_data_raw'
-    ) AS [result];
-```
 
 ```sql
 SELECT
@@ -102,7 +92,7 @@ SELECT
     payment_type, COUNT(1) AS number_of_records
 FROM
     OPENROWSET(
-  BULK 'trip_data_green_csv/year=*/month=*/*.csv',
+        BULK 'trip_data_green_csv/year=*/month=*/*.csv',
         DATA_SOURCE = 'nyc_taxi_data_raw',
         FORMAT = 'CSV',
         PARSER_VERSION = '2.0',
@@ -112,18 +102,35 @@ GROUP BY payment_type
 ORDER BY payment_type;
 ```
 
+#### Identify Null Values
 
+````sql
+SELECT
+    *
+FROM
+    OPENROWSET(
+        BULK 'trip_data_green_csv/year=*/month=*/*.csv',
+        DATA_SOURCE = 'nyc_taxi_data_raw',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',
+        HEADER_ROW = TRUE
+    ) AS [result]
+WHERE
+    total_amount IS NULL;
 
-![image](https://github.com/user-attachments/assets/e66c8cf4-7d9c-4a57-ade7-e60dc96a4f99)
-![image](https://github.com/user-attachments/assets/f2695c07-49de-44a9-8fa6-8747546f210c)
-
-Find Negative Values
-![image](https://github.com/user-attachments/assets/5d32c1da-ba2f-4168-9386-3ae24f6bf7a9)
-![image](https://github.com/user-attachments/assets/5309c559-a8f7-4a2a-a05a-3aee275f5a96)
-
-Find Null Values
-![image](https://github.com/user-attachments/assets/abcafd8c-c04d-4ce8-8787-726086b58c5a)
-
+---------------------------------
+SELECT
+    COUNT(*) AS null_total_amount_count
+FROM
+    OPENROWSET(
+        BULK 'trip_data_green_csv/year=*/month=*/*.csv',
+        DATA_SOURCE = 'nyc_taxi_data_raw',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',
+        HEADER_ROW = TRUE
+    ) AS [result]
+WHERE
+    total_amount IS NULL;
 
 
 
