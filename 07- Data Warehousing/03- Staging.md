@@ -30,4 +30,5 @@ WITH (
 GO
 
 SELECT TOP 100 * FROM staging.ext_trip_data_green_agg;
+````
 ![image](https://github.com/user-attachments/assets/58d49503-9357-4342-baa4-a4c6285ec5d4)
