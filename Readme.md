@@ -1,7 +1,5 @@
 # Azure Synapse Analytycs 
-#### NYD Taxi Project
-
-### End to End Solution
+### NYD Taxi Project - End to End Solution
 
 ![image](https://github.com/user-attachments/assets/b7b402b7-1759-4f60-b6b6-8eac41f72a4d)
 
