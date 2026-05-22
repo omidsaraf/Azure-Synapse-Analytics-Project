@@ -35,13 +35,6 @@ trip_data_green_agg_df = trip_data_green_df \
 
 ````
 
-
-
-
-
-
-````
-
 # Write the aggregated data to the gold table for consumption
 ````python
 trip_data_green_agg_df.write.mode("overwrite").partitionBy("year", "month").format("parquet").saveAsTable("nyc_taxi_ldw_spark.trip_data_green_agg")
